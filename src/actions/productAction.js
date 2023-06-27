@@ -30,7 +30,7 @@ import {
   DELETE_REVIEW_FAIL,
   CLEAR_ERRORS,
 } from "../constants/productConstants";
-
+axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 // Get All Products
 export const getProduct =
   (keyword = "", currentPage = 1, price = [0, 25000], category, ratings = 0) =>

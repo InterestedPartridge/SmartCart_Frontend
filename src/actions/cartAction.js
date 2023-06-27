@@ -4,7 +4,7 @@ import {
   SAVE_SHIPPING_INFO,
 } from "../constants/cartConstants";
 import axios from "axios";
-
+axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 // Add to Cart
 export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {
   const { data } = await axios.get(`/api/v1/product/${id}`);
